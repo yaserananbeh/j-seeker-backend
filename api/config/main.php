@@ -1,5 +1,6 @@
 <?php
 
+use yii\rest\UrlRule;
 use yii\web\Response;
 
 $params = array_merge(
@@ -49,7 +50,9 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                ['class' => UrlRule::class, 'controller' => ['category', 'job', 'application']],
+            ],
         ],
     ],
     'params' => $params,

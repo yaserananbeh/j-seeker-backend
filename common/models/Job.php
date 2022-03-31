@@ -12,7 +12,7 @@ use Yii;
  * @property string|null $description
  * @property int $created_at
  * @property int $created_by
- * @property int|null $category_id
+ * @property int $category_id
  *
  * @property Application[] $applications
  * @property Category $category
@@ -34,7 +34,7 @@ class Job extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'created_at', 'created_by'], 'required'],
+            [['title', 'created_at', 'created_by', 'category_id'], 'required'],
             [['created_at', 'created_by', 'category_id'], 'integer'],
             [['title', 'description'], 'string', 'max' => 255],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],

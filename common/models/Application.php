@@ -8,8 +8,8 @@ use Yii;
  * This is the model class for table "application".
  *
  * @property int $id
- * @property int|null $job_id
- * @property int|null $user_id
+ * @property int $job_id
+ * @property int $user_id
  * @property int $created_at
  * @property int $status
  *
@@ -32,8 +32,8 @@ class Application extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['job_id', 'user_id', 'created_at'], 'required'],
             [['job_id', 'user_id', 'created_at', 'status'], 'integer'],
-            [['created_at'], 'required'],
             [['job_id'], 'exist', 'skipOnError' => true, 'targetClass' => Job::className(), 'targetAttribute' => ['job_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

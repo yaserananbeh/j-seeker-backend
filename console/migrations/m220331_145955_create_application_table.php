@@ -14,8 +14,8 @@ class m220331_145955_create_application_table extends Migration
     {
         $this->createTable('{{%application}}', [
             'id' => $this->primaryKey(),
-            'job_id' => $this->integer(),
-            'user_id' => $this->integer(),
+            'job_id' => $this->integer()->notNull(),
+            'user_id' => $this->integer()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'status' => $this->integer()->defaultValue(1)->notNull()
         ]);
