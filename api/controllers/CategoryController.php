@@ -2,7 +2,7 @@
 
 namespace api\controllers;
 
-use common\models\Category;
+use api\models\Category;
 
 class CategoryController extends CustomController
 {
