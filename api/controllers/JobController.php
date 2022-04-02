@@ -2,7 +2,7 @@
 
 namespace api\controllers;
 
-use common\models\Job;
+use api\models\Job;
 
 class JobController extends CustomController
 {

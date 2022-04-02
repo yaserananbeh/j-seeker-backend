@@ -2,9 +2,9 @@
 
 namespace api\models;
 
-use common\models\Category as ModelsCategory;
+use common\models\Job as ModelsJob;
 
-class Category extends ModelsCategory
+class Job extends ModelsJob
 {
     // public function fields()
     // {
@@ -12,6 +12,6 @@ class Category extends ModelsCategory
     // }
     public function extraFields()
     {
-        return ['jobs'];
+        return ['category'];
     }
 }
